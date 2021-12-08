@@ -1,5 +1,5 @@
 import React from "react";
-import carro from "../images/png-carrito.png"
+import carro from "../assets/images/png-carrito.png"
 
 function Cart () {
     return (

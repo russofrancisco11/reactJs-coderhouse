@@ -3,7 +3,7 @@
   display: grid;
     grid-template-areas: 
     " nav nav nav nav "
-    " body body body body "
+    " ListContainer ListContainer ListContainer ListContainer "
     " body body body body "
     " footer footer footer footer ";
     grid-template-rows: 15vh auto auto 20vh;
@@ -12,5 +12,10 @@
 
 .nav{
   grid-area: nav;
-  display: inline;
+  display: inline;  
+}
+
+.ListContainer{
+  grid-area: ListContainer;
+  margin: 10px;
 }
