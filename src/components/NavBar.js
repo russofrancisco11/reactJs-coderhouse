@@ -1,13 +1,17 @@
 import React from "react";
+import Cart from "CartWidget.js"
 
 function NavBar() {
     return (
       <div className="nav">
         <header className="encabezado">
-                <nav class="navbar navbar-light fixed-top bg-danger" >
+                <nav class="navbar fixed-top navbar-light fixed-top bg-danger" >
                     <div class="container-fluid">
                         <div class="container">
                         <span class="navbar-brand mb-0 h1">Pipa Fit</span>
+                        </div>
+                        <div class="container-fluid">
+                          <Cart />
                         </div>
                       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                         <span class="navbar-toggler-icon"></span>
