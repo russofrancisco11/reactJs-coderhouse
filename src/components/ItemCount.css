@@ -1,0 +1,23 @@
+
+.contenedorBotones {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+
+.botonSumar {
+    border-radius: 20px;
+    background-color: antiquewhite;
+    color: brown;
+}
+
+.botonRestar {
+    border-radius: 20px;
+    background-color: blue;
+    color: cornsilk;
+}
+
+.value {
+    padding-left: 10px;
+    padding-right: 10px;
+}
