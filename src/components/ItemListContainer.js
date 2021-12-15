@@ -1,5 +1,6 @@
 import React from "react";
 import ItemCount from './ItemCount';
+import ItemList from "./ItemList";
 
 const Items = {
     BotonSubmit : () => (<button>Submit</button>),
@@ -9,7 +10,8 @@ const Items = {
 function ListContainer () {
     return(
         <div className="ListContainer">
-            <Items.Titulo text="Hola tutor Dieguito"></Items.Titulo>
+            <Items.Titulo text="Lista de items?"></Items.Titulo>
+            <ItemList />
             <ItemCount />
             <Items.BotonSubmit></Items.BotonSubmit>
         </div>
