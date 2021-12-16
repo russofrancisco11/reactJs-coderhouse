@@ -1,9 +1,9 @@
 import React from "react";
 import Item from "./Item";
 
-function ItemList ({items}) {
+function ItemList ({objeto}) {
     return (
-        items.map((el) => (
+        objeto.map((el) => (
             <Item key={el.nombre} nombre={el.nombre} imagen={el.imagen} precio={el.precio} descripcion={el.descripcion}/>
         ))
     );
