@@ -1,42 +1,45 @@
-import React from "react";
-import ItemCount from './ItemCount';
+import React, {useState, useEffect} from "react";
+import {NavLink, useParams} from "react-router-dom";
 import ItemList from "./ItemList";
 
-export const ItemListContainer= () => {
+export const ItemListContainer = () => {
     
-    const Cosas = {
-        BotonSubmit : () => (<button>Submit</button>),
-        Titulo : ({text}) => (<h1>{text}</h1>)
+    const {name} = useParams() || ""
+    const [state, setState] = useState([])
+
+    const getAPI = async () => {
+        let API, res;
+        switch (name) {
+            case "Barras":
+                API = await fetch ("https://api.mercadolibre.com/sites/MLA/search?category=MLA65820")
+                res = await API.json()
+                break;
+            case "Discos":
+                API = await fetch ("https://api.mercadolibre.com/sites/MLA/search?category=MLA65864")
+                res = await API.json()
+                break;
+            case "Mancuernas":
+                API = await fetch ("https://api.mercadolibre.com/sites/MLA/search?category=MLA65816")
+                res = await API.json()
+                break;
+            case "Pisos":
+                API = await fetch ("https://api.mercadolibre.com/sites/MLA/search?category=MLA321226")
+                res = await API.json()
+                break;
+        }
+        return res
     }
-    
-    let objeto = [
-        {
-            nombre: "Barra olímpica",
-            imagen: "#",
-            precio: "25.000",
-            descripcion: "Barra cono rodamientos, 20 kg, 2.20 metros de largo",
-        },
-        {
-            nombre: "Barra olímpica para mujeres",
-            imagen: "#",
-            precio: "22.000",
-            descripcion: "Barra cono rodamientos, 15 kg, 2.00 metros de largo",
-        },
-        {
-            nombre: "Barra olímpica w",
-            imagen: "#",
-            precio: "15",
-            descripcion: "Barra cono rodamientos, 12 kg, 1.50 metros de largo",
-        },
-    ]
+
+    useEffect(() => {
+        getAPI(name).then((res) => setState(res.data))
+    }, [name])
 
     return(
         <>
         <div className="ListContainer">
-            <Cosas.Titulo text="Lista de items?"></Cosas.Titulo>
-            <ItemList objeto={objeto}/>
-            <ItemCount />
-            <Cosas.BotonSubmit></Cosas.BotonSubmit>
+            {state.map((value) =>{
+                return <div><NavLink to={`item/${value.name}`}></NavLink>{value.name}</div>
+            })}
         </div>
         </>
     );
@@ -44,30 +47,25 @@ export const ItemListContainer= () => {
 
 export default ItemListContainer
 
-/*const Cosas = {
-    BotonSubmit : () => (<button>Submit</button>),
-    Titulo : ({text}) => (<h1>{text}</h1>)
-}
 
-let objeto = {
-    nombre: "Barra olímpica",
-    imagen: "#",
-    precio: "25.000",
-    descripcion: "Barra cono rodamientos, 20 kg, 2.20 metros de largo",
-}
-
-function ListContainer () {
-
-    return(
-        <>
-        <div className="ListContainer">
-            <Cosas.Titulo text="Lista de items?"></Cosas.Titulo>
-            <ItemList objeto={objeto}/>
-            <ItemCount />
-            <Cosas.BotonSubmit></Cosas.BotonSubmit>
-        </div>
-        </>
-    );
-}
-
-export default ItemListContainer*/
+/*let objeto = [
+    {
+        nombre: "Barra olímpica",
+        imagen: "#",
+        precio: "25.000",
+        descripcion: "Barra cono rodamientos, 20 kg, 2.20 metros de largo",
+    },
+    {
+        nombre: "Barra olímpica para mujeres",
+        imagen: "#",
+        precio: "22.000",
+        descripcion: "Barra cono rodamientos, 15 kg, 2.00 metros de largo",
+    },
+    {
+        nombre: "Barra olímpica w",
+        imagen: "#",
+        precio: "15",
+        descripcion: "Barra cono rodamientos, 12 kg, 1.50 metros de largo",
+    },
+]
+*/
