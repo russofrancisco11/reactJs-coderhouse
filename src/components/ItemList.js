@@ -4,7 +4,7 @@ import Item from "./Item";
 function ItemList ({objeto}) {
     return (
         objeto.map((el) => (
-            <Item key={el.id} nombre={el.title} imagen={el.thumbnail} precio={el.price}/>
+            <Item key={el.nombre} nombre={el.nombre} imagen={el.imagen} precio={el.precio} descripcion={el.descripcion}/>
         ))
     );
 }
