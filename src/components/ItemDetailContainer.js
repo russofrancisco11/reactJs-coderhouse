@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import ItemCount from "./ItemCount";
+import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState ({});
@@ -31,13 +31,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div className="ListContainer">
-            {item?.length ?? (
-                <div>
-                    <p>{item.title}</p>
-                    <img src={item.thumbnail} style={{ width: 250}}/>
-                </div>
-            )}
-            <ItemCount initialValue={value} stock={5} />
+            <ItemDetail item={item}/>
         </div>
     );
 };
