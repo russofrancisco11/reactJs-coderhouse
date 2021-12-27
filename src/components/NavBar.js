@@ -6,46 +6,36 @@ function NavBar() {
     return (
       <div className="nav">
         <header className="encabezado">
-                <nav class="navbar fixed-top navbar-light fixed-top bg-danger" >
-                    <div class="container-fluid">
-                        <div class="container">
-                        <span class="navbar-brand mb-0 h1"><NavLink to="/"></NavLink>Pipa Fit</span>
-                        </div>
-                        <div class="container-fluid">
-                          <Cart />
-                        </div>
-                      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
-                          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                              <a class="nav-link active" aria-current="page" href=""><NavLink to="/"></NavLink>Home</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Productos
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                  <li><a class="dropdown-item" href=""><NavLink to="/category/"></NavLink>Barras</a></li>
-                                  <li><a class="dropdown-item" href=""><NavLink to="/category/"></NavLink>Discos</a></li>
-                                  <li><a class="dropdown-item" href=""><NavLink to="/category/"></NavLink>Mancuernas</a></li>
-                                  <li><a class="dropdown-item" href=""><NavLink to="/category/"></NavLink>Pisos</a></li>
-                                </ul>
-                              </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="secciones/seccionoldshakesperians.html"><NavLink to="/Nosotros"></NavLink>Nosotros</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                </nav>
+          <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+            <div class="container-fluid">
+              <a class="navbar-brand"><NavLink exact to="/">Pipa Fit</NavLink></a>
+              <Cart />
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"><NavLink exact to="/">Home</NavLink></a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Productos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item"><NavLink exact to="/category/Barras">Barras</NavLink></a></li>
+                      <li><a class="dropdown-item"><NavLink exact to="/category/Discos">Discos</NavLink></a></li>
+                      <li><a class="dropdown-item"><NavLink exact to="/category/Mancuernas">Mancuernas</NavLink></a></li>
+                      <li><a class="dropdown-item"><NavLink exact to="/category/Pisos">Pisos</NavLink></a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"><NavLink exact to="/Nosotros">Nosotros</NavLink></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
         </header>
       </div>
     );

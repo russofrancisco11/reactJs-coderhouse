@@ -1,5 +1,5 @@
 
-const Item = ({nombre, imagen, precio, descripcion}) => {
+const Articulo = ({nombre, imagen, precio, descripcion}) => {
     return (
         <div className="Item">
             <h2>{nombre}</h2>
@@ -10,7 +10,7 @@ const Item = ({nombre, imagen, precio, descripcion}) => {
     )
 }
 
-export default Item
+export default Articulo
 /*
 const Item = ({nombre, imagen, precio, descripcion}) => {
     return (

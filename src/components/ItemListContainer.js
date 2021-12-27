@@ -1,13 +1,11 @@
 import React from "react";
+import {useParams} from "react-router-dom";
 import ItemCount from './ItemCount';
 import ItemList from "./ItemList";
 
 export const ItemListContainer = () => {
     
-    const Cosas = {
-        BotonSubmit : () => (<button>Submit</button>),
-        Titulo : ({text}) => (<h1>{text}</h1>)
-    }
+    let {categoria} = useParams();
 
     let objeto = [
         {
@@ -33,10 +31,9 @@ export const ItemListContainer = () => {
     return(
         <>
         <div className="ListContainer">
-            <Cosas.Titulo text="Lista de items?"></Cosas.Titulo>
+            <p>Lista de {categoria}</p>
             <ItemList objeto={objeto}/>
             <ItemCount />
-            <Cosas.BotonSubmit></Cosas.BotonSubmit>
         </div>
         </>
     );

@@ -1,10 +1,10 @@
 import React from "react";
-import Item from "./Item";
+import Articulo from "./Articulo";
 
 function ItemList ({objeto}) {
     return (
         objeto.map((el) => (
-            <Item key={el.nombre} nombre={el.nombre} imagen={el.imagen} precio={el.precio} descripcion={el.descripcion}/>
+            <Articulo key={el.nombre} nombre={el.nombre} imagen={el.imagen} precio={el.precio} descripcion={el.descripcion}/>
         ))
     );
 }
